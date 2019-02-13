@@ -32,7 +32,22 @@ This is one of the happy occasions when TypeScript can help us with _zero additi
 
 The TypeScript compiler is smart enough to know that async functions always return promises, even though we didn't tell it what the promise will resolve to. And promises don't have a method called `getProperty`.
 
+### Promises without a value
 
+Some puppeteer functions produce promises that don't have a return value, but just resolve to indicate that the action is complete. For example, `page.type` has no meaningful result, but will resolve to say "all done typing into the browser".
 
+```typescript
+page.type('[name="search"]', 'Pikachu');
+page.click('[type="submit"]');
+// maybe a race condition! We might not be done typing 'Pikachu' at
+// the time we click submit
+```
 
+TypeScript alone won't catch this, but [tslint](https://palantir.github.io/tslint/) can warn you about these "floating" promises.
+
+![](.gitbook/assets/f1sukrf-2019-02-12.png)
+
+### References
+
+* [https://palantir.github.io/tslint/rules/no-floating-promises/](https://palantir.github.io/tslint/rules/no-floating-promises/)
 
