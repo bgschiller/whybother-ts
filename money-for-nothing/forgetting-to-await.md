@@ -45,7 +45,7 @@ page.click('[type="submit"]');
 
 TypeScript alone won't catch this, but [tslint](https://palantir.github.io/tslint/) can warn you about these "floating" promises.
 
-![](.gitbook/assets/f1sukrf-2019-02-12.png)
+![](../.gitbook/assets/f1sukrf-2019-02-12.png)
 
 ### References
 
