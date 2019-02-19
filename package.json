@@ -1,0 +1,27 @@
+{
+  "name": "whybother-ts",
+  "version": "1.0.0",
+  "description": "TypeScript is a great tool. But if you're not convinced, it can seem like a lot of work. Why bother?",
+  "main": "none",
+  "scripts": {
+      "build": "vuepress build && echo whybotherts.com > .vuepress/dist/CNAME"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgschiller/whybother-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "vuepress",
+    "documentation"
+  ],
+  "author": "Brian Schiller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bgschiller/whybother-ts/issues"
+  },
+  "homepage": "https://github.com/bgschiller/whybother-ts#readme",
+  "dependencies": {
+    "vuepress": "^0.14.9"
+  }
+}
