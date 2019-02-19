@@ -1,0 +1,2 @@
+# Making impossible states impossible
+

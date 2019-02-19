@@ -3,4 +3,5 @@
 * [What's all the fuss about?](README.md)
 * [Forgetting to await](forgetting-to-await.md)
 * [Exhaustiveness Checking](exhaustiveness-checking.md)
+* [Making impossible states impossible](making-impossible-states-impossible.md)
 
