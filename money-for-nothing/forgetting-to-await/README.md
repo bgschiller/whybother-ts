@@ -6,8 +6,9 @@ The project I'm on at work uses [puppeteer](https://pptr.dev/) to interact with 
 function _findOneWithText(selector, value) {
   // this function will be run in the browser context,
   // not the node context
-  return Array.from(document.querySelectorAll(selector))
-    .filter(elem => elem.textContent.includes(value))[0];
+  return Array.from(document.querySelectorAll(selector)).filter(elem =>
+    elem.textContent.includes(value)
+  )[0];
 }
 
 async function findOneWithText(page, selector, value) {
@@ -19,8 +20,8 @@ It's easy to assume these functions will return right away because they look jus
 
 ```javascript
 function learnMoreLink(page) {
-  const link = findOneWithText(page, '.typescript a', 'learn more');
-  return link.getProperty('href');
+  const link = findOneWithText(page, ".typescript a", "learn more");
+  return link.getProperty("href");
 }
 ```
 
@@ -37,7 +38,7 @@ The TypeScript compiler is smart enough to know that async functions always retu
 Some puppeteer functions produce promises that don't have a return value, but just resolve to indicate that the action is complete. For example, `page.type` has no meaningful result, but will resolve to say "all done typing into the browser".
 
 ```typescript
-page.type('[name="search"]', 'Pikachu');
+page.type('[name="search"]', "Pikachu");
 page.click('[type="submit"]');
 // maybe a race condition! We might not be done typing 'Pikachu' at
 // the time we click submit
@@ -45,9 +46,8 @@ page.click('[type="submit"]');
 
 TypeScript alone won't catch this, but [tslint](https://palantir.github.io/tslint/) can warn you about these "floating" promises.
 
-![](../.gitbook/assets/f1sukrf-2019-02-12.png)
+![](./floating-promises.png)
 
 ### References
 
-* [https://palantir.github.io/tslint/rules/no-floating-promises/](https://palantir.github.io/tslint/rules/no-floating-promises/)
-
+- [https://palantir.github.io/tslint/rules/no-floating-promises/](https://palantir.github.io/tslint/rules/no-floating-promises/)
