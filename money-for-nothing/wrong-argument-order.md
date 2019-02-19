@@ -19,5 +19,5 @@ function nestedDropNullsAndUndefined(x) {
 }
 ```
 
-With that code, TypeScript will warn you about every use of `obj[k]`. And with good reason! Despite the names I gave them, the arguments given to reduce's callback are `acc, curr`, in that order. I guessed the wrong order, but TypeScript had my back.
+With that code, TypeScript will warn you about every use of `obj[k]`:  "Type '{}' cannot be used as an index type". Despite the names I gave them, the arguments given to reduce's callback are `acc, curr`, in that order. I guessed the wrong order, but TypeScript had my back.
 
