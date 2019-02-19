@@ -4,7 +4,7 @@
   "description": "TypeScript is a great tool. But if you're not convinced, it can seem like a lot of work. Why bother?",
   "main": "none",
   "scripts": {
-      "build": "vuepress build && echo whybotherts.com > .vuepress/dist/CNAME"
+      "build": "vuepress build && echo whybotherts.com > .vuepress/dist/CNAME && touch .vuepress/dist/.nojekyll"
   },
   "repository": {
     "type": "git",
