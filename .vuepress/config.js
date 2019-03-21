@@ -15,7 +15,14 @@ module.exports = {
           "/money-for-nothing/forgetting-to-await/"
         ]
       },
-      "exhaustiveness-checking/"
+      "exhaustiveness-checking/",
+      {
+        title: "Okay, I'm Convinced",
+        children: [
+          "/okay-im-convinced/",
+          "/okay-im-convinced/generic-functions/"
+        ]
+      }
     ],
     repo: "bgschiller/whybother-ts",
     editLinks: true
