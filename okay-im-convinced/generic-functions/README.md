@@ -28,7 +28,7 @@ const squares = nums.map(x => x * x); // inferred as number[]
 const loggedSquares = log(squares); // inferred as any
 ```
 
-This is a problem because if TypeScript things our value is of type `any` rather than `number[]`, it won't catch when we make a mistake:
+This is a problem because if TypeScript thinks our value is of type `any` rather than `number[]`, it won't catch when we make a mistake:
 
 ```typescript
 // Error: Operator '+' cannot be applied to types number[] and 5
@@ -86,7 +86,7 @@ Some functions' type definitions have two or more type variables. `map` is a com
 With practice, the TypeScript syntax will become easier to read than the english. Here's what it looks like for map:
 
 ```typescript
-function map<T, R>(arr: T[], mapper: (t: T) => R): R[]
+function map<T, R>(lst: T[], mapper: (t: T) => R): R[]
 ```
 
 And once more, with descriptions alongside
@@ -94,7 +94,7 @@ And once more, with descriptions alongside
 ```typescript
 function map
   <T, R>( // for some types T and R
-    arr: T[], // arr is an array of T
+    lst: T[], // lst is an array of T
     mapper: (t: T) => R // mapper is a function from T to R
   ): R[] // The return value is an array of R
 ```
